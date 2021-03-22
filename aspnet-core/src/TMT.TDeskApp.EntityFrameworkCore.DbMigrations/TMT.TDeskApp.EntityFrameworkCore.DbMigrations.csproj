@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>TMT.TDeskApp</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\libs\TMT.Tenant\TMT.TenantManagement.csproj" />
+    <ProjectReference Include="..\TMT.TDeskApp.EntityFrameworkCore\TMT.TDeskApp.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.*" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.*" />
+  </ItemGroup>
+
+</Project>

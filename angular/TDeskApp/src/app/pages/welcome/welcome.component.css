@@ -1,0 +1,239 @@
+   body, html {
+    font-family: Poppins-Regular, sans-serif;
+  }
+
+   
+   .chat-container {
+    /* background-image:  linear-gradient(to bottom, rgb(177, 99, 157),rgb(110, 98, 214)); */
+    width: 98.4%;
+    border-radius: 7px;
+    height: auto;
+    padding: 0;
+  }
+
+  .profile-image{
+    width: 50px;
+    height: 50px;
+    border-radius: 40px;
+    float: left;
+  }
+
+  .settings-trays {
+      background: #eee;
+      padding: 10px 15px 60px 15px;
+      border-radius: 7px;
+      
+  }
+  
+  .settings-trays h3{
+    margin-left: 19px;
+    margin-bottom: 0px;
+    margin-top: 7px;
+    width: 50px;
+    height: 50px;
+    float: left;
+  }
+  .settings-tray .no-gutters{
+    padding: 0;
+  }
+
+  .settings-tray--right{
+    float: right;
+  }
+  .settings-tray {
+    background: #eee;
+    padding: 10px 15px;
+    border-radius: 7px;
+  }
+  .settings-tray--right i{
+    font-size: 25px;
+    color: grey;
+    margin-left: 14px;
+    transition: .3s;
+    margin-top: 10px;
+    
+  }
+  .settings-tray--right i:hover{
+        color: #74b9ff;
+        cursor: pointer;
+  }
+  
+  .search-box {
+    background: #fafafa;
+    padding: 10px 13px;
+    
+  }
+
+  .search-box .input-wrapper {
+    background: #fff;
+    border-radius: 40px;
+  }
+
+  .search-box .input-wrapper i{
+    color: grey;
+    margin-left: 10px; 
+    vertical-align: middle;
+    
+  }
+
+
+  input {
+    border:none;
+    border-radius: 30px;
+    width: 80%;
+  }
+
+  input::placeholder{
+    color: #e3e3e3;
+    font-weight: 300;
+    margin-left: 20px;
+  }
+
+  input:focus{
+    outline: none;
+  }
+
+  .friend-drawer {
+    padding: 10px 15px;
+    display: flex;
+    vertical-align: baseline;
+    background: #fff;
+    transition: .3s ease;
+  }
+
+  .friend-drawer--grey {
+    padding: 10px 15px;
+    display: flex;
+    vertical-align: baseline;
+    background: #fff;
+    transition: .3s ease;
+  }
+  .friend-drawer .text{
+    margin-left: 12px;
+    width: 80%;
+    
+  }
+
+  .friend-drawer .text h6{
+    margin-top: 6px;
+    margin-bottom: 0;
+    color: black;
+  }
+
+  .friend-drawer .text p{
+    margin: 0;
+  }
+
+  .friend-drawer .time{
+    color:grey;
+  }
+
+  .friend-drawer--onhover:hover{
+    background: #74b9ff;
+    cursor : pointer;
+  }
+
+  .friend-drawer--onhover:hover p,h6,.time{
+    color: rgb(3, 3, 3) !important;
+  }
+
+  hr {
+    margin: 5px auto;
+    width: 60%;
+  }
+
+  .chat-bubble {
+    padding: 10px 14px;
+    background: #eee;
+    margin: 10px 30px;
+    border-radius: 9px;
+    position: relative;
+    animation: fadeIn 1s ease-in;
+  }
+  .chat-bubble::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-bottom: 0;
+    margin-top: -10px;
+  }
+
+  .chat-bubble--left::after{
+    left: 0;
+    border-right-color: #eee;
+    border-left: 0;
+    margin-left: -20px;
+  }
+
+  .chat-bubble--right:after{
+    right: 0;
+    border-left-color: #74b9ff;
+    border-right: 0;
+    margin-right: -20px;
+  }
+
+  @keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+
+  .offset-md-9 .chat-bubble{
+     
+    background: #74b9ff;
+    color: #fff;
+  
+  }
+
+  .chat-box-tray {
+    background: #eee;
+    display: flex;
+    align-items: baseline;
+    padding: 10px 15px;
+    align-items: center;
+    margin-top: 19px;
+    bottom: 0;
+  }
+
+  .chat-box-tray input{
+    margin: 0 10px;
+    padding: 6px 2px 6px 2px;
+    width: 80%;
+  }
+
+  .chat-box-tray i{
+    color: grey;
+    font-size: 30px;
+    vertical-align: middle;
+  }
+
+  .chat-box-tray i:last-of-type{
+    margin-left: 25px;
+  }
+
+  /* mobile */
+  @media only screen and (max-width:46.1875em){
+
+  }
+
+  /* table */
+  @media only screen and (min-width:46.25em) and (max-width:63.9375){
+
+  }
+  /* pc */
+  @media only screen and (min-width:64em) and (max-width:90em)  {
+    .friend-drawer .settings-tray--right {
+      margin-left: 16.625em;
+      width: 50%;
+    }
+  }
+
+
+
+  

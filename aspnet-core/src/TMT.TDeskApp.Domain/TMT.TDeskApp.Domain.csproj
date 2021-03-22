@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>TMT.TDeskApp</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\libs\TMT.Auditing\TMT.Auditing.csproj" />
+    <ProjectReference Include="..\..\libs\TMT.Tenant\TMT.TenantManagement.csproj" />
+    <ProjectReference Include="..\..\libs\TMT.UniqueKey\TMT.UniqueKey\TMT.UniqueKey.csproj">
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\TMT.TDeskApp.Domain.Shared\TMT.TDeskApp.Domain.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Emailing" Version="4.2.2" />
+    <PackageReference Include="Volo.Abp.Identity.Domain" Version="4.2.2" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Identity" Version="4.2.2" />
+    <PackageReference Include="Volo.Abp.IdentityServer.Domain" Version="4.2.2" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.IdentityServer" Version="4.2.2" />
+    <PackageReference Include="Volo.Abp.BackgroundJobs.Domain" Version="4.2.2" />
+    <PackageReference Include="Volo.Abp.AuditLogging.Domain" Version="4.2.2" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Domain" Version="4.2.2" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Domain" Version="4.2.2" />
+  </ItemGroup>
+
+</Project>

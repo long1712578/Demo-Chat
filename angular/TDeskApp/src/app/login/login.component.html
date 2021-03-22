@@ -1,0 +1,147 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100">
+      <div class="login100-pic js-tilt">
+        <img src="https://truongminhthinh.com/Themes/tmt/Content/images/logo/logo.png" alt="IMG">
+      </div>
+      <form nz-form #loginform id="loginform" class="login100-form validate-form" [formGroup]="validateForm" class="login-form" #f="ngForm" >
+        <span class="login100-form-title display-3 animate__animated animate__bounce">
+          Chào mừng đến với Tdesk
+        </span>
+        
+        <nz-form-item>
+          <nz-form-control >
+            <div class="wrap-input100 validate-input" nzPrefixIcon="user">
+              <span class="symbol-input100">
+                <i nz-icon nzType="user" nzTheme="outline"></i>
+              </span>
+              <input class="input100" id="phonenumber" name="phonenumber" type="text"  formControlName="phonenumber" placeholder="Số điện thoại" />
+            </div>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control >
+            <div class="wrap-input100 validate-input" required nzPrefixIcon="lock">
+              <span class="symbol-input100">
+                <i nz-icon nzType="lock" nzTheme="outline"></i>
+              </span>
+              <input class="input100" type="password" formControlName="password" placeholder="Mật khẩu" />
+            </div>
+          </nz-form-control>
+        </nz-form-item>
+        <ul class="txt3" *ngFor="let item of listErrorLogin">
+          <li>{{item.message}}</li>
+        </ul>
+        <button class="login100-form-btn" (click)="submitForm(f)" >Đăng nhập</button>
+        <div class="text-center p-t-12">
+          <span class="txt1">
+            Chưa có tài khoản ?
+          </span>
+          <button class="txt2" (click)="showInputRegister()">
+            Thì đăng ký nào.
+          </button>
+        </div>
+      </form>
+      <form nz-form #formRegister id="formRegister" class="formRegister" [formGroup]="validateFormOTP" #formRe= "ngForm">
+        <span class="login100-form-title display-3 animate__animated animate__bounce">
+          Vui lòng nhập SĐT:
+        </span>
+        <nz-form-control >
+          <div class="wrap-input100 validate-input" required> 
+            <span class="symbol-input100">
+              <i nz-icon nzType="number" nzTheme="outline"></i>
+            </span>
+            <input class="input100" id="phonenumberotp" name="phonenumberotp" type="text"  formControlName="phonenumberotp" placeholder="Số điện thoại" />
+          </div>
+        </nz-form-control>
+        <ul class="txt3" *ngFor="let item of listErrorInputNumberphone">
+          <li>{{item.message}}</li>
+        </ul>
+        <div class="text-center p-t-12">
+          
+          <button class="txt2" (click)="showInputOtp(formRe)">
+            Tiếp tục
+          </button>
+          <br>
+          <button class="txt1" (click)="showBackLogin()">
+            Quay lại đăng nhập
+          </button>
+
+        </div>
+      </form>
+      <form nz-form #formOtp #formIPOtp="ngForm" id="formOtp" class="formVerifyOTP" [formGroup]="validateformVerifyOTP" >
+        <span class="login100-form-title display-3 animate__animated animate__bounce">
+          Mã OTP gửi về SĐT của bạn:
+        </span>
+        <nz-form-item>
+          <nz-form-control >
+            <div class="wrap-input100" required>
+              <span class="symbol-input100">
+                <i nz-icon nzType="number" nzTheme="outline"></i>
+              </span>
+              <input class="input100" type="text"  formControlName="otpcode" placeholder="Xác nhận OTP" />
+            </div>
+          </nz-form-control>
+        </nz-form-item>
+        <ul class="txt3" *ngFor="let item of listErrorInputOtp">
+          <li>{{item.message}}</li>
+        </ul>
+        <div class="text-center p-t-12">
+          <button class="txt2" (click)="showSignUp(formIPOtp)">
+            Xác nhận
+          </button>
+        </div>
+      </form>
+      <form nz-form #formSignUp #FormSU="ngForm" id="formSignUp" class="formSignUp" [formGroup]="validateFormSignUp">
+        <span class="login100-form-title display-3 animate__animated animate__bounce">
+         Đăng ký:
+        </span>
+        <nz-form-item>
+          <nz-form-control >
+            <div class="wrap-input100" required>
+              <span class="symbol-input100">
+                <i nz-icon nzType="number" nzTheme="outline"></i>
+              </span>
+              <input class="input100" type="text" formControlName="name" placeholder="Họ tên" />
+            </div>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control >
+            <div class="wrap-input100" required>
+              <span class="symbol-input100">
+                <i nz-icon nzType="number" nzTheme="outline"></i>
+              </span>
+              <input class="input100" type="text"  formControlName="email" placeholder="Nhập email" />
+            </div>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control >
+            <div class="wrap-input100" required>
+              <span class="symbol-input100">
+                <i nz-icon nzType="number" nzTheme="outline"></i>
+              </span>
+              <input class="input100" type="password"  formControlName="password" placeholder="Mật khẩu" />
+            </div>
+          </nz-form-control>
+        </nz-form-item>
+        <ul class="txt3" *ngFor="let item of listErrorSignUp">
+          <li>{{item.message}}</li>
+        </ul>
+        <div class="text-center p-t-12">
+          
+          <button class="txt2" (click)="signUp(FormSU)">
+            Xác nhận
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

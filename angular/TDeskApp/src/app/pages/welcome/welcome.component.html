@@ -1,0 +1,157 @@
+<div class="chat-container">
+  <div class="row no-gutter">
+    <div class="col-md-4 border-right" style="padding-right: 0px;">
+      <div class="settings-trays">
+        <img class="profile-image"
+          src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Wayne_Rooney_144855cropped.jpg" alt="rooney">
+        <h3>Đức</h3>
+        <span class="settings-tray--right">
+
+          <i nz-icon nzType="message" nzTheme="fill"></i>
+          <i nz-icon nzType="sync" nzTheme="outline"></i>
+          <i nz-icon nzType="menu" nzTheme="outline"></i>
+
+        </span>
+      </div>
+      <div class="search-box">
+        <div class="input-wrapper">
+          <i nz-icon nzType="search" nzTheme="outline"></i>
+          <input type="text" placeholder="search here">
+        </div>
+      </div>
+      <div class="friend-drawer friend-drawer--onhover">
+        <img class="profile-image" src="https://www.clarity-enhanced.net/wp-content/uploads/2020/06/robocop.jpg" alt="">
+        <div class="text">
+          <h6>Đức</h6>
+          <p class="text-muted">Hey, you're arrested!</p>
+        </div>
+        <span class="time text-muted small">13:21</span>
+      </div>
+      <hr>
+      <div class="friend-drawer friend-drawer--onhover">
+        <img class="profile-image" src="https://www.clarity-enhanced.net/wp-content/uploads/2020/06/optimus-prime.jpeg"
+          alt="">
+        <div class="text">
+          <h6>Optimus</h6>\
+          <p class="text-muted">Wanna grab a beer?</p>
+        </div>
+        <span class="time text-muted small">00:32</span>
+      </div>
+      <hr>
+      <div class="friend-drawer friend-drawer--onhover ">
+        <img class="profile-image" src="https://www.clarity-enhanced.net/wp-content/uploads/2020/06/real-terminator.png"
+          alt="">
+        <div class="text">
+          <h6>Skynet</h6>
+          <p class="text-muted">Seen that canned piece of s?</p>
+        </div>
+        <span class="time text-muted small">13:21</span>
+      </div>
+      <hr>
+      <div class="friend-drawer friend-drawer--onhover">
+        <img class="profile-image" src="https://www.clarity-enhanced.net/wp-content/uploads/2020/06/termy.jpg" alt="">
+        <div class="text">
+          <h6>Termy</h6>
+          <p class="text-muted">Im studying spanish...</p>
+        </div>
+        <span class="time text-muted small">13:21</span>
+      </div>
+      <hr>
+      <div class="friend-drawer friend-drawer--onhover">
+        <img class="profile-image" src="https://www.clarity-enhanced.net/wp-content/uploads/2020/06/rick.jpg" alt="">
+        <div class="text">
+          <h6>Richard</h6>
+          <p class="text-muted">I'm not sure...</p>
+        </div>
+        <span class="time text-muted small">13:21</span>
+      </div>
+      <hr>
+      <div class="friend-drawer friend-drawer--onhover">
+        <img class="profile-image" src="https://www.clarity-enhanced.net/wp-content/uploads/2020/06/rachel.jpeg" alt="">
+        <div class="text">
+          <h6>XXXXX</h6>
+          <p class="text-muted">Hi, wanna see something?</p>
+        </div>
+        <span class="time text-muted small">13:21</span>
+      </div>
+    </div>
+    <div class="col-8 col-xl-8 col-lg-8 col-md-8" style="padding: 0px 0px 0px 0px">
+      <div class="settings-tray">
+        <div class="friend-drawer no-gutters friend-drawer--grey">
+          <img class="profile-image" src="https://i.ibb.co/JdPNhtx/Lan.png" alt="">
+          <div class="text">
+            <h6>Lân L</h6>
+            <p class="text-muted">Tôi là Lân</p>
+          </div>
+          <span class="settings-tray--right">
+            <!-- user gan cung -->
+            <!-- || u.username==loggedUserName) && !u.busy -->
+            <i class="fas fa-phone" (click)="video('user')" *ngIf="(!isVideoCallAccepted )"></i>
+            <i class="fas fa-video"></i>
+          </span>
+        </div>
+      </div>
+
+      <nz-modal [(nzVisible)]="isVideoCall" nzTitle="You have ring..." (nzOnCancel)="handleCancel()">
+        <ng-container *nzModalContent>
+          <div class="popup-header">
+            <h4>{{callingInfo.name}}</h4>
+            <h5>{{callingInfo.content}}</h5>
+          </div>
+          <!-- *ngIf="callingInfo.type == 'receiver'" -->
+          <div style="text-align: center;">
+            <button (click)="AcceptVideoCall()" class="btn btn-success btn-sm">Accept</button>
+            <button (click)="RejectVideoCall()" class="btn btn-danger btn-sm">Reject</button>
+          </div>
+        </ng-container>
+      </nz-modal>
+
+      <div class="chat-panel">
+        <div class="row no-gutters" style="height: 58.3em; overflow-y: scroll;">
+          <div class="col-xl-3 col-lg-3 col-md-3 offset-md-9" infiniteScroll [infiniteScrollDistance]="2"
+            [infiniteScrollThrottle]="50" (scrolled)="onScroll()" [scrollWindow]="false">
+            <div class="chat-bubble chat-bubble--right" *ngFor="let item of listMessage">
+              {{item.Content}}
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-3">
+            <div class="chat-bubble chat-bubble--left">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+              industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+              scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
+              of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
+              like Aldus PageMaker including versions of Lorem Ipsum.
+            </div>
+          </div>
+        </div>
+
+        <!--<div class="row no-gutters">
+          <div class="col-xl-3 col-lg-3 col-md-3">
+            <div class="chat-bubble chat-bubble--left">
+                Hello dude!
+            </div>
+          </div>
+        </div>
+        
+      <div class="row no-gutters">
+        <div class="col-xl-3 col-md-3 offset-md-9">
+          <div class="chat-bubble chat-bubble--right">
+            Hello dude!
+        </div>
+      </div>
+    </div> -->
+        <div class="row">
+          <div class="col-12">
+            <div class="chat-box-tray">
+              <i nz-icon nzType="smile" nzTheme="fill"></i>
+              <input type="text" placeholder="Type your message here...">
+              <i nz-icon nzType="audio" nzTheme="fill"></i>
+              <i nz-icon nzType="send" nzTheme="outline"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
